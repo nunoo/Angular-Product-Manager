@@ -1,0 +1,22 @@
+<div class="allArtists">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Title</th>
+        <th scope="col">Price</th>
+        <th scope="col">Image</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let product of products">
+      <tr>
+        <td>{{product.title}}</td>
+        <td>$ {{product.price}}</td>
+        <td><img class="img" src="{{product.url}}" alt="image"></td>
+        <td>
+          <button class="btn btn-info mr-1  " [routerLink]="['/edit/' + product._id]">Edit</button>
+          <button class="btn btn-danger" (click)='deleteProduct(product._id)'>Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

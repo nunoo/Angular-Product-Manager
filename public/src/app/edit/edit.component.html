@@ -1,0 +1,22 @@
+<div class="center">
+        <div class="h1">Edit Product</div>
+        <div class="row">
+        <div class="col"></div>
+        <form (submit)="onSubmit()" class="col">
+          <!-- {{product | json}}
+          {{productError | json}} -->
+          <p class="text-danger">{{ productError.title}}</p>
+          <input type="text" placeholder="title" class="form-control mb-4" name="product.title"
+          [(ngModel)]="product.title">
+          <p class="text-danger">{{ productError.price}}</p>
+          <input type="text" placeholder="price" class="form-control mb-4" name="product.price"
+          [(ngModel)]="product.price">
+          <p class="text-danger">{{ productError.url}}</p>
+          <input type="text" placeholder="image url" class="form-control mb-4" name="product.url"
+            [(ngModel)]="product.url">
+          <input type="submit" class="btn btn-secondary mt-2" id="">
+          <button class="btn btn-info mt-2 ml-2 " [routerLink]="['/list']" >Cancel</button>
+        </form>
+        <div class="col"></div>
+        </div>
+      </div>
